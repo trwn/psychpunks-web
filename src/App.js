@@ -1,5 +1,7 @@
-import "./App.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { connect } from "./redux/blockchain/blockchainActions";
+import { fetchData } from "./redux/data/dataActions";
 import head from './rcs/new.png';
 import disp from './rcs/Untitled-1.png';
 import roadmap from './rcs/roadmap.png';
@@ -12,7 +14,6 @@ import disclogo from './rcs/disclogo.png'
 import openlogo from './rcs/openlogo.png'
 import logo from './rcs/logo.png'
 
-
 const filterr ={
   height: '70%',
   width: '400px',
@@ -23,28 +24,31 @@ const filterr ={
 
 const mystyle = {
   margin: "0px",
-  fontFamily: "Press Start 2P",
+  
   color: "red",
   background: "black",
   height: "75px",
+  textAlign: 'center'
 }
 
 const p1 ={
-  marginLeft: "50%",
   color:"white",
-  marginRight: "20%",
   position: 'relative',
-  top: '0px'
-  
+  top: '40px',
+  lineHeight: '1.55',
+  fontSize: '15px',
+  wordWrap: 'break-word',
+  marginLeft: '50%'
 }
 
 const p2 ={
-  marginLeft: "50%",
   color:"white",
-  marginRight: "20%",
   position: 'relative',
-  top: '0px',
-  width: 'auto'
+  top: '60px',
+  lineHeight: '1.55',
+  fontSize: '15px',
+  wordWrap: 'break-word',
+  marginLeft: '50%'
   
 }
 
@@ -52,7 +56,8 @@ const h2={
   marginLeft: "50%",
   color:"white",
   marginBottom: "25px",
-  paddingTop: "0%"
+  paddingTop: "0%",
+  fontSize: '20px'
   
 }
 
@@ -68,7 +73,7 @@ const div1={
   background: "black",
   paddingBottom: "50px",
   paddingTop: "15px",
-  height: "30%",
+  height: "350px",
   width: '100%',
   position: 'relative',
   borderBottom: '4px solid white'
@@ -80,6 +85,7 @@ const div3={
   verticalAlign: 'top',
   position: 'relative'
 }
+
 
 const button4= {
   padding: '16px 42px',
@@ -114,6 +120,8 @@ const bigpic={
   height: '400px',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
+  textAlign: 'center',
+  borderBottom: '4px solid white'
   
 
 }
@@ -141,7 +149,7 @@ const trwn={
   height: '250px',
   position: 'absolute',
   width: 'auto',
-  left: '43%',
+  left: '44%',
   marginTop: '85px'
 }
 
@@ -149,7 +157,7 @@ const dee={
   height: '250px',
   position: 'absolute',
   width: 'auto',
-  left: '18%',
+  left: '17%',
   marginTop: '85px'
 }
 
@@ -157,7 +165,7 @@ const quick={
   height: '250px',
   position: 'absolute',
   width: 'auto',
-  left: '68%',
+  left: '69%',
   marginTop: '85px'
 }
 
@@ -165,21 +173,24 @@ const team={
   background: 'black',
   position: 'relative',
   height: '380px',
-  borderBottom: '4px solid white'
+  borderBottom: '4px solid white',
+  textAlign: 'center'
 }
 
 const teamH={
   color: 'white',
-  left: '45%',
+  left: '48%',
   position: 'absolute',
-  alignSelf: 'center'
+  textAlign: 'center',
+  fontSize: '20px',
+  top: '10px'
 }
 
 const ttwit={
 height: '25px',
 width:'auto',
 position: 'absolute',
-left: '48.5%',
+left: '49.5%',
 top: '350px'
 }
 
@@ -187,7 +198,7 @@ const qtwit={
   height: '25px',
 width:'auto',
 position: 'absolute',
-left: '73.5%',
+left: '74.5%',
 top: '350px'
 }
 
@@ -195,7 +206,7 @@ const dtwit={
   height: '25px',
 width:'auto',
 position: 'absolute',
-left: '23.5%',
+left: '22.5%',
 top: '350px'
 
 }
@@ -207,28 +218,28 @@ const div4={
 }
 
 const contract={
-  fontFamily: 'PressStart2P',
+  
   left: '50px',
   position: 'absolute',
-  top: '20%'
+  top: '40%'
 }
 
 const twitter={
   position: 'absolute',
   color: 'white',
-  marginTop: '27px'
+  marginTop: '41px'
   
 }
 const opensea={
   position: 'absolute',
   color: 'white',
-  marginTop: '6px'
+  marginTop: '19px'
 
 }
 const discord={
   position: 'absolute',
   color: 'white',
-  marginTop: '-15px'
+  marginTop: '-1px'
 
 }
 const socials={
@@ -273,12 +284,120 @@ const logo1={
   width: 'auto'
 }
 
-function App() {
+const connectb={
+  position: 'absolute',
+  right: '20%',
+  top: '3%',
+  height: '40px',
+  width: '80px',
+  padding: '10px 5px 5px 3px ',
+  boxShadow: '0 0 25px 2px #000000',
+  boxShadow: '0 0 25px 2px #000000',
+  lineHeight: '1.25',
+  background: '#FC6E51',
+  color: 'white',
+  fontSize: '14px',
+  letterSpacing: '.08em',
+  textTransform: 'uppercase',
+  transition: 'background-color .6s ease',
+  overflow: 'hidden',
+  textAlign: 'center'
+
+}
+
+const inputbox={
+  position: 'absolute',
+  left: '50%',
+  top: '350px',
+  width: '50px',
+  transform: 'translate(-50%, -50%)',
+  border: '2px solid white',
+  boxShadow: '0 0 25px 2px #000000',
+  boxShadow: '0 0 25px 2px #000000',
+  background: '#FC6E51',
+  textAlign: 'center'
   
+}
+
+const q={
+  position: 'absolute',
+  left: '50%',
+  top: '370px',
+  fontSize: '10px',
+  color: 'white',
+  margin: 'auto',
+  textAlign: 'center',
+  transform: 'translate(-50%, -50%)',
+  
+}
+
+
+function App() {
+  const dispatch = useDispatch();
+  const blockchain = useSelector((state) => state.blockchain);
+  const data = useSelector((state) => state.data);
+  const [feedback, setFeedback] = useState(
+    "🢃🢃 Please input how many PsychPunks 🢃🢃 you would like to mint."
+  );
+  const [claimingNft, setClaimingNft] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const claimNFTs = (_amount) => {
+    if (_amount <= 0) {
+      return;
+    }
+    setFeedback("Minting your PsychPunk...");
+    setClaimingNft(true);
+    blockchain.smartContract.methods
+      .mint(blockchain.account, _amount)
+      .send({
+        gasLimit: "285000",
+        from: blockchain.account,
+        value: blockchain.web3.utils.toWei(
+          (0.042 * _amount).toString(),
+          "ether"
+        ),
+      })
+      .once("error", (err) => {
+        console.log(err);
+        setFeedback("Sorry, something went wrong please try again later.");
+        setClaimingNft(false);
+      })
+      .then((receipt) => {
+        setFeedback(
+          "WOW, you now own a PsychPunk. go visit Opensea.io to view it."
+        );
+        setClaimingNft(false);
+        dispatch(fetchData(blockchain.account));
+      });
+  };
+
+  const getData = () => {
+    if (blockchain.account !== "" && blockchain.smartContract !== null) {
+      dispatch(fetchData(blockchain.account));
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, [blockchain.account]);
+
   return (
-    <div style={divv}>
+        <div style={divv}>
 
       <h1 style={mystyle} >
+
+      <button
+      style={connectb}
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch(connect());
+          getData();
+        }}
+      >
+        Connect
+      </button>
+
         <img src={logo} style={logo1}></img>
       <a href={"https://opensea.io/collection/psych-punks"}>
         <img src={openlogo} style={openl}>
@@ -300,7 +419,23 @@ function App() {
   <div style={bigpic}>
   
   {/* <img style={background} responsive src={head} alt="punks"></img> */}
-  <button style={button4} >Mint</button>
+  <button style={button4} disabled={claimingNft ? 1 : 0}
+        onClick={(e) => {
+          e.preventDefault();
+          claimNFTs(inputValue);
+          getData();
+        }}
+      >
+        {claimingNft ? "BUSY" : "MINT"} </button>
+        
+        <input
+        style={inputbox}
+        value={inputValue}
+        placeholder='ex. 1'
+        onChange={(e) => setInputValue(e.target.value)}></input>
+
+        {/* <h1 style={q}>Quantity</h1> */}
+      
   
   </div>
     <div style={div1} >
@@ -310,9 +445,9 @@ function App() {
       <div style={div3}>
 
       <p style={p1}>PsychPunks is a collection of 10,000 randomly-generated Punks on the Ethereum network.
-       There are 110 unique traits and 5 different types of Punks.
-Each Punk gets a Psychedelic DNA that refers to its own attributes and makes them
- trippy af! Not all Punks are created equal as some are much rarer than others.
+                    There are 110 unique traits and 5 different types of Punks.
+                    Each Punk gets a Psychedelic DNA that refers to its own attributes and makes them
+                    trippy af! Not all Punks are created equal as some are much rarer than others.
 </p>
 
 </div>
@@ -370,9 +505,16 @@ Each Punk gets a Psychedelic DNA that refers to its own attributes and makes the
 
         </p>
       </div>
+      <div>
+      
     </div>
     
-    );
-  }
+    </div>
+
+
+
+
+  );
+}
 
 export default App;
