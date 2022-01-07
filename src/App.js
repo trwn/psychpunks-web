@@ -1,7 +1,5 @@
 import "./App.css";
 import React from "react";
-import { injected } from "./components/wallet/connectors";
-import { useWeb3React } from "@web3-react/core";
 import head from './rcs/new.png';
 import disp from './rcs/Untitled-1.png';
 import roadmap from './rcs/roadmap.png';
@@ -9,7 +7,19 @@ import qsc from './rcs/qsteam.png';
 import tr from './rcs/trteam.png';
 import dr from './rcs/deteam.png';
 import twit from './rcs/twit.png';
+import filter from './rcs/filter.png'
+import disclogo from './rcs/disclogo.png'
+import openlogo from './rcs/openlogo.png'
+import logo from './rcs/logo.png'
 
+
+const filterr ={
+  height: '70%',
+  width: '400px',
+  position: 'absolute',
+  right: '16%',
+  top: '18%'
+}
 
 const mystyle = {
   margin: "0px",
@@ -71,24 +81,10 @@ const div3={
   position: 'relative'
 }
 
-
-const button={
-  size: "25px",
-  left: '90%',
-  top: '20px',
-  position: 'absolute'
-}
-
-const button2={
-  size: "25px",
-  left: '92.2%',
-  top: '45px',
-  position: 'absolute'
-}
-
 const button4= {
   padding: '16px 42px',
-  boxShadow: '0px 0px 12px -2px rgba(0,0,0,0.5)',
+  boxShadow: '0 0 25px 2px #000000',
+  boxShadow: '0 0 25px 2px #000000',
   lineHeight: '1.25',
   background: '#FC6E51',
   textDecoration: 'none',
@@ -105,14 +101,7 @@ const button4= {
   top: '300px',
   transform: 'translate(-50%, -50%)',
 
-}
 
-const span={
-  fontSize: '10px',
-  left: '92.4%',
-  top: '2px',
-  position: 'absolute',
-  color: 'white'
 }
 
 const divv={
@@ -129,27 +118,12 @@ const bigpic={
 
 }
 
-const rd={
-  height: '500px',
-  background: 'white',
-  position: 'relative'
-
-}
-
 const roadmapimg={
   display: 'block',
   marginLeft: 'auto',
   marginRight: 'auto',
   width: '40%',
   height: '50%',
-}
-
-const p3={
-  left: '50%',
-  top: '20%',
-  position: 'absolute',
-  verticalAlign: 'center',
-  width: 'auto'
 }
 
 const newdiv={
@@ -175,7 +149,7 @@ const dee={
   height: '250px',
   position: 'absolute',
   width: 'auto',
-  left: '23%',
+  left: '18%',
   marginTop: '85px'
 }
 
@@ -183,14 +157,15 @@ const quick={
   height: '250px',
   position: 'absolute',
   width: 'auto',
-  left: '63%',
+  left: '68%',
   marginTop: '85px'
 }
 
 const team={
   background: 'black',
   position: 'relative',
-  height: '380px'
+  height: '380px',
+  borderBottom: '4px solid white'
 }
 
 const teamH={
@@ -212,7 +187,7 @@ const qtwit={
   height: '25px',
 width:'auto',
 position: 'absolute',
-left: '68.5%',
+left: '73.5%',
 top: '350px'
 }
 
@@ -220,56 +195,118 @@ const dtwit={
   height: '25px',
 width:'auto',
 position: 'absolute',
-left: '28.5%',
+left: '23.5%',
 top: '350px'
 
 }
 
+const div4={
+  height: '75px',
+  color: 'black',
+  position:'relative'
+}
+
+const contract={
+  fontFamily: 'PressStart2P',
+  left: '50px',
+  position: 'absolute',
+  top: '20%'
+}
+
+const twitter={
+  position: 'absolute',
+  color: 'white',
+  marginTop: '27px'
+  
+}
+const opensea={
+  position: 'absolute',
+  color: 'white',
+  marginTop: '6px'
+
+}
+const discord={
+  position: 'absolute',
+  color: 'white',
+  marginTop: '-15px'
+
+}
+const socials={
+  position: 'absolute',
+  right: '15%',
+  top: '10%'
+  
+}
+
+const twitl={
+  position: 'absolute',
+  right: '10%',
+  top: '3%',
+  height: '40px',
+  width: 'auto',
+  marginLeft: '5px',
+  marginRight: '5px'
+}
+const openl={
+  position: 'absolute',
+  right: '5%',
+  top: '3%',
+  height: '40px',
+  width: 'auto',
+  marginLeft: '5px',
+  marginRight: '5px'
+}
+const discordl={
+  position: 'absolute',
+  right: '15%',
+  top: '3%',
+  height: '40px',
+  width: 'auto',
+  marginLeft: '5px',
+  marginRight: '5px'
+}
+const logo1={
+  position: 'absolute',
+  left: '4%',
+  top: '2%',
+  height: '50px',
+  width: 'auto'
+}
+
 function App() {
   
-  const { active, account, library, connector, activate, deactivate } =
-    useWeb3React();
-
-  async function connect() {
-    try {
-      await activate(injected);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  async function disconnect() {
-    try {
-      deactivate();
-    } catch (e) {
-      console.log(e);
-    }
-    }
-
   return (
     <div style={divv}>
 
       <h1 style={mystyle} >
-      <button onClick={connect} style={button}>Connect to metamask</button>
-      {active ? (
-        <span>
-          Connected with <b>{account}</b>
-        </span>
-      ) : (
-        <span style={span}>not connected</span>
-      )}
-      <button style={button2} onClick={disconnect}>disconnect</button>
+        <img src={logo} style={logo1}></img>
+      <a href={"https://opensea.io/collection/psych-punks"}>
+        <img src={openlogo} style={openl}>
+
+        </img>
+      </a>
+      <a href={"https://twitter.com/psychpunks"}>
+        <img src={twit} style={twitl}>
+          
+        </img>
+      </a>
+      <a href={"https://discord.gg/wZeUXjsZrP"}>
+        <img src={disclogo} style={discordl}>
+          
+        </img>
+      </a>
       </h1>
 
   <div style={bigpic}>
   
   {/* <img style={background} responsive src={head} alt="punks"></img> */}
-  <button style={button4}>Mint</button>
+  <button style={button4} >Mint</button>
   
   </div>
-    <div style={div1}>
+    <div style={div1} >
     <h2 style={h2}>What are PsychPunks?</h2>
       <img style={img1} src={disp} alt="PsychPunk"></img>
+      <img style={filterr} src={filter}></img>
       <div style={div3}>
 
       <p style={p1}>PsychPunks is a collection of 10,000 randomly-generated Punks on the Ethereum network.
@@ -310,8 +347,29 @@ Each Punk gets a Psychedelic DNA that refers to its own attributes and makes the
     <img  src={twit} style={dtwit}></img>
     </a>
 
+
+
+      
     </div>
-    
+    <div style={div4}>
+        <p style={contract}>
+          <a href={"https://etherscan.io/address/0x26582b17c733bbc60fa41c833c9d814fc9cc4b03"}>
+            Contract
+          </a>
+        </p>
+        <p style={socials}>
+          <a href={"https://discord.gg/wZeUXjsZrP" }style={discord}>
+          Discord
+          </a>
+          <a href={"https://opensea.io/collection/psych-punks"}style={opensea}>
+            OpenSea
+          </a>
+          <a href={"https://twitter.com/psychpunks"}style={twitter}>
+            Twitter
+          </a>
+
+        </p>
+      </div>
     </div>
     
     );

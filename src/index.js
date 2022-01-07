@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+// import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Web3ReactProvider } from "@web3-react/core";
@@ -12,9 +12,9 @@ function getLibrary(provider, connector) {
 
 ReactDOM.render(
   <Web3ReactProvider getLibrary={getLibrary}>
-    <React.StrictMode>
+    {/* <React.StrictMode> */}
       <App />
-    </React.StrictMode>
+    {/* </React.StrictMode> */}
   </Web3ReactProvider>,
   document.getElementById("root")
 );
