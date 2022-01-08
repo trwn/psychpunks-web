@@ -22,7 +22,8 @@
     "styled-components": "^5.3.0",
     "web-vitals": "^1.0.1",
     "web3": "^1.5.1",
-    "web3-eth-contract": "^1.5.2"
+    "web3-eth-contract": "^1.5.2",
+    "node" : ">=14.0.0" 
   },
   "scripts": {
     "start": "react-scripts start",
@@ -51,12 +52,5 @@
   "devDependencies": {
     "truffle-plugin-verify": "^0.5.14"
   }
-},
-
-{ 
-  "engines" : { 
-    "node" : ">=14.0.0" 
-  }
 }
-
 
