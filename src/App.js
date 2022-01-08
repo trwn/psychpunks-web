@@ -13,12 +13,13 @@ import filter from './rcs/filter.png'
 import disclogo from './rcs/disclogo.png'
 import openlogo from './rcs/openlogo.png'
 import logo from './rcs/logo.png'
+import teampic from './rcs/teampic.png'
 
 const filterr ={
   height: '70%',
-  width: '400px',
+  width: '550px',
   position: 'absolute',
-  right: '16%',
+  right: '0%',
   top: '18%'
 }
 
@@ -37,8 +38,9 @@ const p1 ={
   top: '40px',
   lineHeight: '1.55',
   fontSize: '15px',
-  wordWrap: 'break-word',
-  marginLeft: '50%'
+  textAlign: 'left',
+  marginLeft: '50%',
+  paddingRight: '50px'
 }
 
 const p2 ={
@@ -47,8 +49,9 @@ const p2 ={
   top: '60px',
   lineHeight: '1.55',
   fontSize: '15px',
-  wordWrap: 'break-word',
-  marginLeft: '50%'
+  textAlign: 'left',
+  marginLeft: '50%',
+  paddingRight: '50px'
   
 }
 
@@ -71,9 +74,9 @@ const img1 ={
 
 const div1={
   background: "black",
-  paddingBottom: "50px",
+  paddingBottom: "100px",
   paddingTop: "15px",
-  height: "350px",
+  height: "auto",
   width: '100%',
   position: 'relative',
   borderBottom: '4px solid white'
@@ -146,7 +149,7 @@ const spacer={
 
 
 const trwn={
-  height: '250px',
+  height: '60%',
   position: 'absolute',
   width: 'auto',
   left: '44%',
@@ -154,7 +157,7 @@ const trwn={
 }
 
 const dee={
-  height: '250px',
+  height: '60%',
   position: 'absolute',
   width: 'auto',
   left: '17%',
@@ -162,7 +165,7 @@ const dee={
 }
 
 const quick={
-  height: '250px',
+  height: '60%',
   position: 'absolute',
   width: 'auto',
   left: '69%',
@@ -174,7 +177,11 @@ const team={
   position: 'relative',
   height: '380px',
   borderBottom: '4px solid white',
-  textAlign: 'center'
+  textAlign: 'center',
+  alignItems: 'center',
+  alignSelf: 'center',
+  justifyContent: 'center',
+  alignItems: 'center'
 }
 
 const teamH={
@@ -186,30 +193,7 @@ const teamH={
   top: '10px'
 }
 
-const ttwit={
-height: '25px',
-width:'auto',
-position: 'absolute',
-left: '49.5%',
-top: '350px'
-}
 
-const qtwit={
-  height: '25px',
-width:'auto',
-position: 'absolute',
-left: '74.5%',
-top: '350px'
-}
-
-const dtwit={
-  height: '25px',
-width:'auto',
-position: 'absolute',
-left: '22.5%',
-top: '350px'
-
-}
 
 const div4={
   height: '75px',
@@ -331,6 +315,50 @@ const q={
   
 }
 
+const teamp={
+  position: 'relative',
+  width: 'auto',
+  marginTop: '45px',
+  marginBottom: '0px',
+  height: '80%',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
+
+const ttwit={
+  position: 'relative',
+  width: 'auto',
+  height: '10%',
+marginLeft: '-470px',
+marginRight: 'auto',
+top: '10px'
+}
+  
+
+  const qtwit={
+    position: 'relative',
+    width: 'auto',
+    height: '10%',
+  marginLeft: '-180px',
+  marginRight: 'auto',
+  top: '10px'
+  }
+  
+  
+  const dtwit={
+    position: 'relative',
+    width: 'auto',
+    height: '10%',
+  marginLeft: '-770px',
+  marginRight: 'auto',
+  top: '10px'
+    
+
+  }
+  
+ 
+
+
 
 function App() {
   const dispatch = useDispatch();
@@ -383,71 +411,73 @@ function App() {
   }, [blockchain.account]);
 
   return (
-        <div style={divv}>
+    <div style={divv}>
 
-      <h1 style={mystyle} >
+    <h1 style={mystyle} >
 
-      <button
-      style={connectb}
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch(connect());
-          getData();
-        }}
-      >
-        Connect
-      </button>
+    <button
+    style={connectb}
+      onClick={(e) => {
+        e.preventDefault();
+        dispatch(connect());
+        getData();
+      }}
+    >
+      Connect
+    </button>
+    
 
-        <img src={logo} style={logo1}></img>
-      <a href={"https://opensea.io/collection/psych-punks"}>
-        <img src={openlogo} style={openl}>
+      <img src={logo} style={logo1}></img>
+    <a href={"https://opensea.io/collection/psych-punks"}>
+      <img src={openlogo} style={openl}>
 
-        </img>
-      </a>
-      <a href={"https://twitter.com/psychpunks"}>
-        <img src={twit} style={twitl}>
-          
-        </img>
-      </a>
-      <a href={"https://discord.gg/wZeUXjsZrP"}>
-        <img src={disclogo} style={discordl}>
-          
-        </img>
-      </a>
-      </h1>
-
-  <div style={bigpic}>
-  
-  {/* <img style={background} responsive src={head} alt="punks"></img> */}
-  <button style={button4} disabled={claimingNft ? 1 : 0}
-        onClick={(e) => {
-          e.preventDefault();
-          claimNFTs(inputValue);
-          getData();
-        }}
-      >
-        {claimingNft ? "BUSY" : "MINT"} </button>
+      </img>
+    </a>
+    <a href={"https://twitter.com/psychpunks"}>
+      <img src={twit} style={twitl}>
         
-        <input
-        style={inputbox}
-        value={inputValue}
-        placeholder='ex. 1'
-        onChange={(e) => setInputValue(e.target.value)}></input>
+      </img>
+    </a>
+    <a href={"https://discord.gg/wZeUXjsZrP"}>
+      <img src={disclogo} style={discordl}>
+        
+      </img>
+    </a>
+    </h1>
 
-        {/* <h1 style={q}>Quantity</h1> */}
+<div style={bigpic}>
+
+{/* <img style={background} responsive src={head} alt="punks"></img> */}
+<button style={button4} disabled={claimingNft ? 1 : 0}
+      onClick={(e) => {
+        e.preventDefault();
+        claimNFTs(inputValue);
+        getData();
+      }}
+    >
+      {claimingNft ? "BUSY" : "MINT"}
+    </button>
       
-  
-  </div>
-    <div style={div1} >
-    <h2 style={h2}>What are PsychPunks?</h2>
-      <img style={img1} src={disp} alt="PsychPunk"></img>
-      <img style={filterr} src={filter}></img>
-      <div style={div3}>
+      <input
+      style={inputbox}
+      value={inputValue}
+      placeholder='ex. 1'
+      onChange={(e) => setInputValue(e.target.value)}></input>
 
-      <p style={p1}>PsychPunks is a collection of 10,000 randomly-generated Punks on the Ethereum network.
-                    There are 110 unique traits and 5 different types of Punks.
-                    Each Punk gets a Psychedelic DNA that refers to its own attributes and makes them
-                    trippy af! Not all Punks are created equal as some are much rarer than others.
+      {/* <h1 style={q}>Quantity</h1> */}
+    
+
+</div>
+  <div style={div1} >
+  <h2 style={h2}>What are PsychPunks?</h2>
+    <img style={img1} src={disp} alt="PsychPunk"></img>
+    <img style={filterr} src={filter}></img>
+    <div style={div3}>
+
+    <p style={p1}>PsychPunks is a collection of 10,000 randomly-generated Punks on the Ethereum network.
+                  There are 110 unique traits and 5 different types of Punks.
+                  Each Punk gets a Psychedelic DNA that refers to its own attributes and makes them
+                  trippy af! Not all Punks are created equal as some are much rarer than others.
 </p>
 
 </div>
@@ -455,65 +485,59 @@ function App() {
 <div></div>
 
 <p style={p2}>Upon completion of the project, the team will donate 10Ξ to Johns Hopkins Center for Psychedelic & Consciousness Research.</p>
+  
+
+
+
+  </div>
+  <div style={newdiv}>
+    <div style={spacer}></div>
+    <img src={roadmap} style={roadmapimg}></img>
+    <div style={spacer}></div>
+  </div>
+
+  <div style={team}>
+  <h1 style={teamH}>Our Team</h1>
+
+  <img src={teampic} style={teamp}></img>
+  <a href={"https://twitter.com/quickscopeNFT"}>
+  <img  src={twit} style={qtwit}></img>
+  </a>
+  <a href={"https://twitter.com/trwn__"}>
+  <img  src={twit} style={ttwit}></img>
+  </a>
+  <a href={"https://twitter.com/deeerab"}>
+  <img  src={twit} style={dtwit}></img>
+  </a>
+
+
+
     
+  </div>
+  <div style={div4}>
+      <p style={contract}>
+        <a href={"https://etherscan.io/address/0x26582b17c733bbc60fa41c833c9d814fc9cc4b03"}>
+          Contract
+        </a>
+      </p>
+      <p style={socials}>
+        <a href={"https://discord.gg/wZeUXjsZrP" }style={discord}>
+        Discord
+        </a>
+        <a href={"https://opensea.io/collection/psych-punks"}style={opensea}>
+          OpenSea
+        </a>
+        <a href={"https://twitter.com/psychpunks"}style={twitter}>
+          Twitter
+        </a>
 
-
-
+      </p>
     </div>
-    <div style={newdiv}>
-      <div style={spacer}></div>
-      <img src={roadmap} style={roadmapimg}></img>
-      <div style={spacer}></div>
-    </div>
-
-    <div style={team}>
-    <h1 style={teamH}>Our Team</h1>
-
-    <img src={qsc} style={quick}></img>
-    <img src={dr} style={dee}></img>
-    <img src={tr} style={trwn}></img>
-    <a href={"https://twitter.com/quickscopeNFT"}>
-    <img  src={twit} style={qtwit}></img>
-    </a>
-    <a href={"https://twitter.com/trwn__"}>
-    <img  src={twit} style={ttwit}></img>
-    </a>
-    <a href={"https://twitter.com/deeerab"}>
-    <img  src={twit} style={dtwit}></img>
-    </a>
-
-
-
-      
-    </div>
-    <div style={div4}>
-        <p style={contract}>
-          <a href={"https://etherscan.io/address/0x26582b17c733bbc60fa41c833c9d814fc9cc4b03"}>
-            Contract
-          </a>
-        </p>
-        <p style={socials}>
-          <a href={"https://discord.gg/wZeUXjsZrP" }style={discord}>
-          Discord
-          </a>
-          <a href={"https://opensea.io/collection/psych-punks"}style={opensea}>
-            OpenSea
-          </a>
-          <a href={"https://twitter.com/psychpunks"}style={twitter}>
-            Twitter
-          </a>
-
-        </p>
-      </div>
-      <div>
-      
-    </div>
+    <div>
     
-    </div>
-
-
-
-
+  </div>
+  
+  </div>   
   );
 }
 
