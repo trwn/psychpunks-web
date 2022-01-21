@@ -14,7 +14,10 @@ import {
   WebsiteRights,
   SocialIcons,
   SocialIconsLink,
+  DIV,
+  Contract,
 } from "./FooterElements";
+import logo from "./logo.png"
 
 const Footer = () => {
   return (
@@ -22,29 +25,16 @@ const Footer = () => {
       <FooterWrap>
         <FooterLinksContainer>
           <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle> About us </FooterLinkTitle>
-              <FooterLink to="/Home"> Mint </FooterLink>
-              <FooterLink to="/Home"> OpenSea </FooterLink>
-              <FooterLink to="/Home"> Twitter </FooterLink>
-              <FooterLink to="/Home"> Discord </FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle> About us </FooterLinkTitle>
-              <FooterLink to="/Home"> Mint </FooterLink>
-              <FooterLink to="/Home"> OpenSea </FooterLink>
-              <FooterLink to="/Home"> Twitter </FooterLink>
-              <FooterLink to="/Home"> Discord </FooterLink>
-            </FooterLinkItems>
+
           </FooterLinksWrapper>
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="">PsychPunks</SocialLogo>
+            <SocialLogo src={logo}/>
             <WebsiteRights>
-              PsychPunks&copy; 2022, All rights reserved
+              PsychPunks&copy; 2022
+              <DIV>Not Affiliated with Larva Labs</DIV>
+              <Contract>0x26582b17C733bBC60FA41c833c9D814FC9CC4B03</Contract>
             </WebsiteRights>
             <SocialIcons>
               <SocialIconsLink href="/" target="_blank" aria-label="Twitter">

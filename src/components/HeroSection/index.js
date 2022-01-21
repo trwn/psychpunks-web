@@ -20,6 +20,12 @@ import {
 } from "./HeroElements";
 import logo from './logo.png'
 
+const div1={
+  marginTop: '15px',
+  fontSize: '30px',
+  marginBottom: '-15px'
+}
+
 const contractAddress = "0xab89D55822768F9eA1A6FFbe3f0eE10D676cA752"; // rinkby testnet address
 const abi = contract.abi;
 
@@ -87,8 +93,10 @@ const HeroSection = () => {
       <HeroContent>
         <HeroLogo src={logo}></HeroLogo>
         <HeroP>
-          Mint a psychpunks today! And still have a change to get a Psychpunks
+          Mint a PsychPunk today! And still have a change to get a PsychPunks
           hoodie!
+        <div style={div1}> 0.042 Ξ </div>
+          
         </HeroP>
         <HeroBtnWrapper>
           <Button

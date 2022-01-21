@@ -83,21 +83,20 @@ export const SocialMediaWrap = styled.div`
   }
 `;
 
-export const SocialLogo = styled(Link)`
+export const SocialLogo = styled.img`
   color: white;
   justify-self: start;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  font-weight: bold;
+  height: 40px;
+  margin-right: -40px;
 `;
 
 export const WebsiteRights = styled.small`
   color: white;
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 export const SocialIcons = styled.div`
@@ -111,3 +110,14 @@ export const SocialIconsLink = styled.a`
   color: white;
   font-size: 24px;
 `;
+
+export const DIV = styled.div`
+text-align: center;
+margin-top: 10px;
+margin-bottom: 10px;
+`
+export const Contract = styled.div`
+text-align: center;
+margin-top: 10px;
+margin-bottom: 10px;
+`
