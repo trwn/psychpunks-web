@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           <SidebarLink to="roadmap" offset={-100} onClick={toggle}>
             Roadmap
           </SidebarLink>
-          <SidebarLink to="treasury" onClick={toggle}>
+          <SidebarLink to="dao" onClick={toggle}>
             Treasury
           </SidebarLink>
           <SidebarLink to="team" onClick={toggle}>
