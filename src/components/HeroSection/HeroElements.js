@@ -58,6 +58,10 @@ export const HeroLogo = styled.img`
   width: auto;
   align-self: center;
   margin-bottom: -20px;
+
+  @media screen and (max-width: 768px) {
+    height: 65px;
+  }
 `;
 
 export const HeroP = styled.p`
