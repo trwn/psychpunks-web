@@ -27,7 +27,7 @@ const Footer = () => {
             <SocialLogo onClick={toggleHome}>PsychPunks</SocialLogo>
 
             <Info>
-              PsychPunks&copy; 2022, All rights reserved
+              PsychPunks&copy; 2022
               <br></br>
               Not affiliated with LarvaLabs.
               <br></br>
