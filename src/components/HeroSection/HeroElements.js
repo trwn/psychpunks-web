@@ -43,15 +43,6 @@ export const VideoBg = styled.img`
   background: pink;
 `;
 
-export const VideoBg2 = styled.img`
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  background: pink;
-`;
-
-
 export const HeroContent = styled.div`
   z-index: 3;
   max-width: 1200px;
@@ -62,18 +53,11 @@ export const HeroContent = styled.div`
   align-items: center;
 `;
 
-export const HeroH1 = styled.h1`
-  color: white;
-  font-size: 48px;
-  text-align: center;
-
-  @media screen and (max-width: 768px) {
-    font-size: 40px;
-  }
-
-  @media screen and (max-width: 480px) {
-    font-size: 32px;
-  }
+export const HeroLogo = styled.img`
+  height: 100px;
+  width: auto;
+  align-self: center;
+  margin-bottom: -20px;
 `;
 
 export const HeroP = styled.p`
@@ -82,7 +66,23 @@ export const HeroP = styled.p`
   font-size: 24px;
   text-align: center;
   max-width: 600px;
-  text-shadow: 3px 3px 5px #000000;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
+`;
+
+export const HeroP1 = styled.p`
+  margin-top: 10px;
+  color: white;
+  font-size: 28px;
+  text-align: center;
+  max-width: 600px;
+  text-shadow: 1px 1px black;
 
   @media screen and (max-width: 768px) {
     font-size: 24px;
@@ -118,7 +118,7 @@ export const Button = styled.button`
   white-space: nowrap;
   padding: 12px 30px;
   color: black;
-  font-size: 25px;
+  font-size: 16px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -126,9 +126,6 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
-  width: 150px;
-  height: 50px;
-  margin-bottom: 10px;
 
   &:hover {
     color: white;
@@ -152,12 +149,3 @@ export const Input = styled.input`
   align-items: center;
   font-size: 14px;
 `;
-
-export const HeroLogo = styled.img`
-  height: 100px;
-  width: auto;
-  align-self: center;
-  margin-bottom: -20px
-  
-`
-;

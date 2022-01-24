@@ -1,53 +1,65 @@
 import React from "react";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
+import openSea from "../../images/opensea.png";
+import { animateScroll as scroll } from "react-scroll";
 import {
   FooterContainer,
   FooterWrap,
-  FooterLinksContainer,
-  FooterLinksWrapper,
-  FooterLinkTitle,
-  FooterLinkItems,
-  FooterLink,
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
   WebsiteRights,
   SocialIcons,
   SocialIconsLink,
+  IconImg,
+  ContractAddress,
   DIV,
-  Contract,
 } from "./FooterElements";
-import logo from "./logo.png"
 
 const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <FooterContainer>
       <FooterWrap>
-        <FooterLinksContainer>
-          <FooterLinksWrapper>
-
-          </FooterLinksWrapper>
-        </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo src={logo}/>
+            <SocialLogo onClick={toggleHome}>PsychPunks</SocialLogo>
             <WebsiteRights>
               PsychPunks&copy; 2022
-              <DIV>Not Affiliated with Larva Labs</DIV>
-              <Contract>0x26582b17C733bBC60FA41c833c9D814FC9CC4B03</Contract>
             </WebsiteRights>
+            
             <SocialIcons>
-              <SocialIconsLink href="/" target="_blank" aria-label="Twitter">
+              <SocialIconsLink
+                href="https://twitter.com/psychpunks"
+                target="_blank"
+                aria-label="Twitter"
+              >
                 <FaTwitter />
               </SocialIconsLink>
-              <SocialIconsLink href="/" target="_blank" aria-label="Discord">
+              <SocialIconsLink
+                href="https://discord.gg/XfxabdJFsA"
+                target="_blank"
+                aria-label="Discord"
+              >
                 <FaDiscord />
               </SocialIconsLink>
-              <SocialIconsLink href="/" target="_blank" aria-label="OpenSea">
-                <FaTwitter />
+              <SocialIconsLink
+                href="https://opensea.io/collection/psych-punks"
+                target="_blank"
+                aria-label="OpenSea"
+              >
+                <IconImg src={openSea}></IconImg>
               </SocialIconsLink>
             </SocialIcons>
           </SocialMediaWrap>
+          <DIV>Not Affiliated with Larva Labs</DIV>
+          <ContractAddress>
+            Contract address: 0x26582b17c733bbc60fa41c833c9d814fc9cc4b03
+          </ContractAddress>
+          
         </SocialMedia>
       </FooterWrap>
     </FooterContainer>

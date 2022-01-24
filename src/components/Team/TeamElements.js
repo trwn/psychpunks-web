@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TeamContainer = styled.div`
-  height: 800px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,18 +36,22 @@ export const TeamWrapper = styled.div`
   }
 `;
 
-export const TeamCard = styled.div`
-  background: #728e89;
+export const TeamCard1 = styled.a`
+  background: url("https://i.ibb.co/cJDB3DC/10.png");
+  background-position: top;
+  background-size: 460px;
+  background-repeat: no-repeat;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
+  border: 2px solid white;
   max-height: 340px;
   padding: 80px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-outs;
-  overflow: hidden;
 
   &:hover {
     transform: scale(1.02);
@@ -56,47 +60,82 @@ export const TeamCard = styled.div`
   }
 `;
 
-export const TeamCardIMG = styled.img`
-object-fit: fill;
-width: 750px;
-margin-top: -80px;
-height: 1100px;
+export const TeamCard2 = styled.a`
+  background: url(https://i.ibb.co/qnRsP3W/11.png);
+  background-position: top;
+  background-size: 460px;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid white;
+  max-height: 340px;
+  padding: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-outs;
 
+  &:hover {
+    transform: scale(1.02);
+    transform: all 0.2s ease-in-outs;
+    cursor: pointer;
+  }
+`;
 
+export const TeamCard3 = styled.a`
+  background: url("https://i.ibb.co/3BmptHp/15.png");
+  background-position: top;
+  background-size: 460px;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid white;
+  max-height: 340px;
+  padding: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-outs;
+
+  &:hover {
+    transform: scale(1.02);
+    transform: all 0.2s ease-in-outs;
+    cursor: pointer;
+  }
 `;
 
 export const TeamIcon = styled.img`
   height: 160px;
   width: 160px;
-  margin-top: 20px;
   margin-bottom: 10px;
   border-radius: 20px;
   outline: 2px solid white;
-  position: absolute;
 `;
 export const TeamH1 = styled.h1`
   font-size: 2.5rem;
   color: white;
-  margin-bottom: 664px;
-  position: absolute;
-  
+  margin-bottom: 64px;
+  text-shadow: -2px 3px black;
+
   @media screen and (max-width: 480) {
     font-size: 2rem;
   }
 `;
 
 export const TeamH2 = styled.h2`
-  font-size: 1rem;
+  text-shadow: -1px 1px black;
+  font-size: 1.5rem;
   margin-bottom: 10px;
   color: white;
-  position: absolute;
-  margin-top: 170px;
 `;
 
 export const TeamP = styled.p`
+  text-shadow: -1px 1px black;
   font-size: 1rem;
   text-align: center;
   color: white;
-  position: absolute;
-  margin-top: 200px;
 `;

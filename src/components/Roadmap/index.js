@@ -1,16 +1,12 @@
 import React from "react";
-import roadmap from './roadmap.png';
-
-import {
-  RoadmapContainer,
-  RoadmapIMG,
-} from "./RoadmapElements";
+import { ImageWrapper, Image } from "./RoadmapElements";
+import img from "../../images/roadmap2.png";
 
 const roadMap = () => {
   return (
-    <RoadmapContainer>
-      <RoadmapIMG src={roadmap}></RoadmapIMG>
-    </RoadmapContainer>
+    <ImageWrapper id="roadmap">
+      <Image src={img}></Image>
+    </ImageWrapper>
   );
 };
 

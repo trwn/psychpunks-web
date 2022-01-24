@@ -97,7 +97,7 @@ export const Navbar = ({ toggle }) => {
                 exact="true"
                 offset={-80}
               >
-                DAO
+                Treasury
               </NavLinks>
             </NavItem>
             <NavItem>

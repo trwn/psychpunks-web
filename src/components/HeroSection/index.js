@@ -2,31 +2,23 @@ import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import contract from "../../contracts/psychpunks.json";
 import img from "../../images/bg.png";
-import filter from "./filter.png"
+import logo from "../../images/logo.png";
 import {
   HeroContainer,
   HeroBg,
   VideoBg,
-  VideoBg2,
   HeroContent,
   HeroLogo,
   HeroP,
+  HeroP1,
   HeroBtnWrapper,
   ArrowForward,
   ArrowRight,
   Button,
   Input,
-  
 } from "./HeroElements";
-import logo from './logo.png'
 
-const div1={
-  marginTop: '15px',
-  fontSize: '30px',
-  marginBottom: '-15px'
-}
-
-const contractAddress = "0xab89D55822768F9eA1A6FFbe3f0eE10D676cA752"; // rinkby testnet address
+const contractAddress = "0x26582b17c733bbc60fa41c833c9d814fc9cc4b03";
 const abi = contract.abi;
 
 const HeroSection = () => {
@@ -88,16 +80,13 @@ const HeroSection = () => {
     <HeroContainer>
       <HeroBg>
         <VideoBg autoPlay loop muted src={img} type="img" />
-        <VideoBg2 src={filter} type="img" />
       </HeroBg>
       <HeroContent>
         <HeroLogo src={logo}></HeroLogo>
         <HeroP>
-          Mint a PsychPunk today! And still have a change to get a PsychPunks
-          hoodie!
-        <div style={div1}> 0.042 Ξ </div>
-          
+          Mint your PsychPunks today!
         </HeroP>
+        <HeroP1>0.042 Ξ</HeroP1>
         <HeroBtnWrapper>
           <Button
             onMouseEnter={onHover}

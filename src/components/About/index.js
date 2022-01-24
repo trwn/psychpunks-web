@@ -1,8 +1,7 @@
 import React from "react";
 import { HomeButton } from "../HomeButtonElements";
 import { animateScroll as scroll } from "react-scroll";
-import img from "../../images/1.png";
-import gif from './gif.gif'
+import img from "../../images/1.gif";
 import {
   InfoContrainer,
   InfoWrapper,
@@ -50,14 +49,14 @@ const about = () => {
                     spy={true}
                     offset={-80}
                   >
-                    Get a PsychPunk
+                    Join Us!
                   </HomeButton>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={gif} />
+                <Img src={img} />
               </ImgWrap>
             </Column2>
           </InfoRow>

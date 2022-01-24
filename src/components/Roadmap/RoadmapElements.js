@@ -1,22 +1,26 @@
 import styled from "styled-components";
-import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 
-export const RoadmapContainer = styled.div`
+export const ImageWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
-  background: #587f8a;
-  size: 100%;
+  z-index: 1;
+  height: 1000px;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center;
-  align-items: center;
+  background-color: #587f8a;
+  overflow: hidden;
+  padding-bottom: 25px;
+
+  @media screen and (max-width: 768px) {
+    height: 600px;
+    padding-right: 10px;
+  }
 `;
 
-export const RoadmapIMG = styled.img`
-  width: 50%;
-  height: 50%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  background: #587f8a;
-  padding-bottom: 30px;
+export const Image = styled.img`
+  height: 100%;
 
+  @media screen and (max-width: 768px) {
+    width: 135%;
+  }
 `;

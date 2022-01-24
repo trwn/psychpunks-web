@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const InfoContrainer = styled.div`
   background: #bd7dcd;
+  display: flex;
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -32,6 +33,7 @@ export const InfoRow = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
+    grid-gap: 50px;
   }
 `;
 
@@ -57,14 +59,16 @@ export const TopLine = styled.p`
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 16px;
+  text-shadow: -2px 3px black;
 `;
 export const Heading = styled.h1`
   margin-bottom: 24px;
   font-size: 64px;
+  line-height: 1.1;
   font-weight: 600;
   color: white;
-  text-transform: bold;
+  text-shadow: -2px 3px black;
 
   @media screen and (max-width: 480px) {
     font-size: 32px;
@@ -74,7 +78,7 @@ export const Heading = styled.h1`
 export const Subtitle = styled.p`
   max-width: 500px;
   margin-bottom: 35px;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 30px;
   color: white;
 `;
@@ -87,7 +91,6 @@ export const BtnWrap = styled.div`
 export const ImgWrap = styled.div`
   max-width: 555px;
   height: 100%;
-  margin-top: -100px
 `;
 export const Img = styled.img`
   width: 100%;
