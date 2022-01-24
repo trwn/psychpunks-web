@@ -8,12 +8,10 @@ import {
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
-  WebsiteRights,
+  Info,
   SocialIcons,
   SocialIconsLink,
   IconImg,
-  ContractAddress,
-  DIV,
 } from "./FooterElements";
 
 const Footer = () => {
@@ -27,10 +25,14 @@ const Footer = () => {
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo onClick={toggleHome}>PsychPunks</SocialLogo>
-            <WebsiteRights>
-              PsychPunks&copy; 2022
-            </WebsiteRights>
-            
+
+            <Info>
+              PsychPunks&copy; 2022, All rights reserved
+              <br></br>
+              Not affiliated with LarvaLabs.
+              <br></br>
+              Contract address: 0x26582b17c733bbc60fa41c833c9d814fc9cc4b03
+            </Info>
             <SocialIcons>
               <SocialIconsLink
                 href="https://twitter.com/psychpunks"
@@ -55,11 +57,6 @@ const Footer = () => {
               </SocialIconsLink>
             </SocialIcons>
           </SocialMediaWrap>
-          <DIV>Not Affiliated with Larva Labs</DIV>
-          <ContractAddress>
-            Contract address: 0x26582b17c733bbc60fa41c833c9d814fc9cc4b03
-          </ContractAddress>
-          
         </SocialMedia>
       </FooterWrap>
     </FooterContainer>
