@@ -49,7 +49,7 @@ const about = () => {
                     spy={true}
                     offset={-80}
                   >
-                    Get a Psychpunk
+                    Join Us!
                   </HomeButton>
                 </BtnWrap>
               </TextWrapper>
