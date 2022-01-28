@@ -34,7 +34,7 @@ const DAO = () => {
             spy={true}
             offset={-80}
           >
-            Join Us!
+            Get Started
           </HomeButton>
         </DaoBtnWrapper>
       </DaoContent>
